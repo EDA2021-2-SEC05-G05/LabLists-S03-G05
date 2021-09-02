@@ -25,6 +25,7 @@ import sys
 import controller
 from DISClib.ADT import list as lt
 assert cf
+import time
 
 
 """
@@ -34,7 +35,7 @@ se hace la solicitud al controlador para ejecutar la
 operación solicitada
 """
 
-
+start_time = time.time()
 def printMenu():
     print("Bienvenido")
     print("1- Cargar información en el catálogo")
@@ -96,6 +97,7 @@ while True:
         print('Géneros cargados: ' + str(lt.size(catalog['tags'])))
         print('Asociación de Géneros a Libros cargados: ' +
               str(lt.size(catalog['book_tags'])))
+        print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
     elif int(inputs[0]) == 2:
         number = input("Buscando los TOP ?: ")
